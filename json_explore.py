@@ -9,7 +9,7 @@ test_json_string=r'{"_type": "snscrape.modules.twitter.Tweet", "url": "https://t
 test_json = json.loads(test_json_string)
 # pp(test_json) #doesn't work
 
-print(json.dumps(test_json, indent=4))
+# print(json.dumps(test_json, indent=4))
 
 # test_pd = pd.read_json(test_json_string)
 
@@ -24,3 +24,17 @@ print(json.dumps(test_json, indent=4))
 # for i in test_json_string:
 #     print (i)
 
+with open('zm-2-2019-20191008-20191020.json1') as f:
+    for line in f:
+        test_json = json.loads(line)
+        t_date = test_json["date"]
+        t_content = test_json["content"]
+        t_replyCount = test_json["replyCount"]
+        t_retweetCount = test_json["retweetCount"]
+        t_likeCount = test_json["likeCount"]
+        t_quoteCount = test_json["quoteCount"]
+
+        if (t_replyCount!=0):
+            print(f"date:{t_date}\ncontent:{t_content}\nreplyCount:{t_replyCount}\nretweetCount:{t_retweetCount}\
+                \nlikeCount:{t_likeCount}\nquoteCount:{t_likeCount}\n\n\n")
+        # print(json.dumps(test_json, indent=4))
