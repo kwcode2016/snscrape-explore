@@ -6,18 +6,17 @@
 - content
 -renderedContent 
 - user
-    - username
-    - id
-    - display name
-    - displayname
+    - username #important
+    - id #important
+    - displayname #important
     - verified
-    - created
+    - description #description of user
     - statusesCount
     - favoritesCount
     - mediaCount
     - url
-- replyCount # number of replies to this tweet
-- retweetCount #important
+- replyCount #important. number of replies to this tweet. if 0 not so important
+- retweetCount #important. if number of retweet 0 than not so important
 - likeCount #important
 - quoteCount #maybe important
 - conversationId
@@ -30,4 +29,4 @@
     "coordinates": null,
     "place": null,
     "hashtags": null,
-    "cashtags": [
+    "cashtags": [ "ZM" ] 
