@@ -24,7 +24,9 @@ test_json = json.loads(test_json_string)
 # for i in test_json_string:
 #     print (i)
 
-with open('zm-2-2019-20191008-20191020.json1') as f:
+json_filename ='zm-2-2019-20191008-20191020.json1' 
+
+with open(json_filename) as f:
     for line in f:
         test_json = json.loads(line)
         t_date = test_json["date"]
@@ -33,8 +35,9 @@ with open('zm-2-2019-20191008-20191020.json1') as f:
         t_retweetCount = test_json["retweetCount"]
         t_likeCount = test_json["likeCount"]
         t_quoteCount = test_json["quoteCount"]
+        t_url = test_json['url']
 
-        if (t_replyCount!=0):
-            print(f"date:{t_date}\ncontent:{t_content}\nreplyCount:{t_replyCount}\nretweetCount:{t_retweetCount}\
+        if (t_replyCount!=0 or t_retweetCount!=0 or t_likeCount!=0 or t_quoteCount!=0):
+            print(f"url:{t_url}\ndate:{t_date}\ncontent:{t_content}\nreplyCount:{t_replyCount}\nretweetCount:{t_retweetCount}\
                 \nlikeCount:{t_likeCount}\nquoteCount:{t_likeCount}\n\n\n")
         # print(json.dumps(test_json, indent=4))
