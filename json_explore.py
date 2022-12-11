@@ -24,8 +24,12 @@ test_json = json.loads(test_json_string)
 # for i in test_json_string:
 #     print (i)
 
-json_filename ='zm-2-2019-20191008-20191020.json1' 
+# json_filename ='zm-2-2019-20191008-20191020.json1' 
+json_filename ='zm-3-20200915-20201015-high-price.json1' 
+output_filename = 'output1.txt'
 
+output_array=[]
+output_array.append(["t_url", "t_date", "t_content", "t_replyCount", "t_retweetCount", "t_likeCount", "t_quoteCount"])
 with open(json_filename) as f:
     for line in f:
         test_json = json.loads(line)
@@ -38,6 +42,35 @@ with open(json_filename) as f:
         t_url = test_json['url']
 
         if (t_replyCount!=0 or t_retweetCount!=0 or t_likeCount!=0 or t_quoteCount!=0):
-            print(f"url:{t_url}\ndate:{t_date}\ncontent:{t_content}\nreplyCount:{t_replyCount}\nretweetCount:{t_retweetCount}\
-                \nlikeCount:{t_likeCount}\nquoteCount:{t_likeCount}\n\n\n")
+            # print(f"url:{t_url}\ndate:{t_date}\ncontent:{t_content}\nreplyCount:{t_replyCount}\nretweetCount:{t_retweetCount}\
+            #     \nlikeCount:{t_likeCount}\nquoteCount:{t_quote_Count}\n\n\n")
+            output_array.append( [t_url, t_date, t_content, t_replyCount, t_retweetCount, t_likeCount, t_quoteCount])
         # print(json.dumps(test_json, indent=4))
+
+for i in output_array:
+    print (i)
+
+"""
+
+import csv
+
+# Open a new file in write mode
+with open("tweets.csv", "w") as csv_file:
+  # Create a CSV writer
+  writer = csv.writer(csv_file, delimiter=",")
+  
+  # Write the header row
+  writer.writerow(["date", "content", "replyCount", "retweetCount", "likeCount", "quoteCount", "url"])
+  
+  # Write the values for each tweet that has received at least one reply, retweet, like, or quote
+  for tweet in test_json:
+    if (tweet["replyCount"] != 0 or tweet["retweetCount"] != 0 or tweet["likeCount"] != 0 or tweet["quoteCount"] != 0):
+      writer.writerow([tweet["date"], tweet["content"], tweet["replyCount"], tweet["retweetCount"], tweet["likeCount"], tweet["quoteCount"], tweet["url"]])
+
+
+
+["t_url", "t_date", "t_content", "t_replyCount", "t_retweetCount", "t_likeCount", "t_quoteCount"]
+
+[t_url, t_date, t_content, t_replyCount, t_retweetCount, t_likeCount, t_quoteCount]
+
+"""
