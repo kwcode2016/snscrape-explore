@@ -25,8 +25,9 @@ test_json = json.loads(test_json_string)
 #     print (i)
 
 # json_filename ='zm-2-2019-20191008-20191020.json1' 
-json_filename ='zm-3-20200915-20201015-high-price.json1' 
-output_filename = 'output1.txt'
+# json_filename ='zm-3-20200915-20201015-high-price.json1' 
+json_filename ='zm-4-20221215-20221211-high-price.jsonl' 
+output_filename = 'output2.txt'
 
 output_array=[]
 output_array.append(["t_url", "t_date", "t_content", "t_replyCount", "t_retweetCount", "t_likeCount", "t_quoteCount"])
@@ -74,3 +75,4 @@ with open("tweets.csv", "w") as csv_file:
 [t_url, t_date, t_content, t_replyCount, t_retweetCount, t_likeCount, t_quoteCount]
 
 """
+
