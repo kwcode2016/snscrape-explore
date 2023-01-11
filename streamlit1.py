@@ -25,6 +25,21 @@ testing
 
 txt = st.text_area("test text area")
 
-
+# note that text will automatically update after new text is added. very nice.
 st.write("txt is: ")
 st.write(txt)
+
+
+
+
+import datetime
+date = st.sidebar.date_input('start date', datetime.date(2022,1,1))
+
+
+st.write(date)
+
+
+
+
+
+
